@@ -1,0 +1,427 @@
+/* Mont Blanc Expedition - High Alpine Aesthetic */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;600;700&display=swap');
+
+:root {
+    --navy: #0A192F;
+    --slate: #112240;
+    --slate-light: #233554;
+    --ice-blue: #00E5FF;
+    --sky-blue: #A8D0E6;
+    --white: #F8F9FA;
+    --text-muted: #8892B0;
+    --transition: all 0.4s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--navy);
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text-ice { color: var(--ice-blue); }
+.text-white { color: var(--white); }
+
+a {
+    text-decoration: none;
+    color: var(--ice-blue);
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+section {
+    padding: 100px 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Nav */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: rgba(10, 25, 47, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(104, 255, 218, 0.1);
+}
+.nav-brand {
+    font-family: 'Oswald', sans-serif;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+.nav-links a {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.nav-links a:hover {
+    color: var(--ice-blue);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: var(--ice-blue);
+    border: 2px solid var(--ice-blue);
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.btn:hover {
+    background: rgba(0, 229, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);
+}
+.btn-primary {
+    background: var(--ice-blue);
+    color: var(--navy);
+}
+.btn-primary:hover {
+    background: transparent;
+    color: var(--ice-blue);
+}
+
+/* Section Title */
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 15px;
+}
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: var(--ice-blue);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.3)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80') center/cover fixed;
+}
+.hero-content {
+    max-width: 900px;
+}
+.hero-massive {
+    font-size: clamp(5rem, 15vw, 9rem);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: 5px;
+    text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+.hero h1 {
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 1.5rem;
+    color: var(--sky-blue);
+    margin-bottom: 40px;
+}
+
+/* Overview */
+.overview { background: var(--slate); }
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+.stat-box {
+    background: var(--navy);
+    padding: 20px;
+    border-left: 4px solid var(--ice-blue);
+    flex: 1 1 200px;
+}
+.stat-box h4 { font-size: 1.5rem; color: var(--white); margin-bottom: 5px; }
+.overview-img img { border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+/* Guides */
+.guides { background: var(--navy); }
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+.guide-card {
+    background: var(--slate);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.guide-card:hover {
+    transform: translateY(-10px);
+}
+.guide-img { height: 250px; width: 100%; object-fit: cover; }
+.guide-info { padding: 30px; }
+.guide-info h3 { font-size: 1.8rem; margin-bottom: 5px; }
+.guide-info .cert { color: var(--ice-blue); font-size: 0.9rem; font-weight: 600; margin-bottom: 20px; display: block; }
+
+/* Equipment */
+.equipment {
+    background: linear-gradient(rgba(17,34,64,0.95), rgba(17,34,64,0.95)), url('https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=1200&q=80') center/cover fixed;
+}
+.gear-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.gear-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(10,25,47,0.6);
+    padding: 20px;
+    border: 1px solid var(--slate-light);
+}
+.check-icon {
+    color: var(--ice-blue);
+    font-size: 1.5rem;
+}
+
+/* Expedition Itinerary */
+.itinerary { background: var(--navy); }
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--slate-light);
+    left: 40px;
+}
+.timeline-item {
+    position: relative;
+    padding-left: 100px;
+    margin-bottom: 50px;
+}
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+.timeline-day {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--slate);
+    border: 2px solid var(--ice-blue);
+    border-radius: 50%;
+    color: var(--white);
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 1;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.1);
+}
+.timeline-content {
+    background: var(--slate);
+    padding: 30px;
+    border-radius: 4px;
+    position: relative;
+    border-left: 4px solid var(--ice-blue);
+}
+.timeline-content p { margin-top: 10px; }
+
+/* Risks & Safety */
+.safety { background: var(--slate); }
+.safety-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+.risk-box { margin-bottom: 30px; }
+.risk-box h4 {
+    color: #FF5A5A; /* Accent for risk */
+    margin-bottom: 10px;
+}
+
+/* Why It's Worth It */
+.inspiration {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(10,25,47,0.6), rgba(10,25,47,0.8)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80') center/cover fixed;
+}
+.inspiration-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.inspiration h2 { font-size: 4rem; margin-bottom: 30px; }
+.inspiration p { font-size: 1.3rem; color: var(--white); }
+
+/* Pricing */
+.pricing { background: var(--navy); }
+.price-container {
+    display: flex;
+    gap: 60px;
+    background: var(--slate);
+    padding: 60px;
+    border-radius: 4px;
+}
+.price-tag {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid var(--slate-light);
+}
+.price-tag h2 { font-size: 4rem; color: var(--ice-blue); line-height: 1; }
+.price-tag p { margin-top: 10px; font-size: 1.2rem; }
+.price-details { flex: 2; }
+.price-list h4 { margin-top: 20px; margin-bottom: 10px; }
+.price-list ul { list-style: none; }
+.price-list li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+.price-list li::before {
+    content: "•";
+    color: var(--ice-blue);
+    position: absolute;
+    left: 0;
+}
+
+/* Application Form */
+.booking { background: var(--slate-light); }
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--navy);
+    padding: 50px;
+    border-radius: 4px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+.form-group { margin-bottom: 30px; }
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+input, select, textarea {
+    width: 100%;
+    padding: 15px;
+    background: var(--slate);
+    border: 1px solid var(--slate-light);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--ice-blue);
+}
+
+/* Regulations & Footer */
+.regulations {
+    background: var(--navy);
+    text-align: center;
+}
+footer {
+    background: #050c17;
+    padding: 60px 5%;
+    text-align: center;
+    border-top: 1px solid var(--slate);
+}
+.social-links { margin-top: 20px; }
+.social-links a { margin: 0 10px; }
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition);
+}
+.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .overview-grid, .safety-grid, .gear-list, .price-container, .form-row { grid-template-columns: 1fr; }
+    .timeline::before { left: 30px; }
+    .timeline-day { width: 60px; height: 60px; font-size: 1rem; }
+    .timeline-item { padding-left: 80px; }
+    .price-tag { border-right: none; border-bottom: 1px solid var(--slate-light); padding-bottom: 30px; margin-bottom: 30px; }
+    .nav-links { display: none; }
+    section { padding: 80px 5%; }
+}
