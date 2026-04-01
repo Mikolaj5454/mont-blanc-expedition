@@ -150,7 +150,7 @@ nav {
     height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.3)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80') center/cover fixed;
+    background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,0.3)), url('https://images.unsplash.com/photo-1600791275295-6869c67e8d6b?w=1600&q=80') center/cover fixed;
 }
 .hero-content {
     max-width: 900px;
